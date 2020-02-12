@@ -9,13 +9,17 @@ class Taylor:
 
     @classmethod
     def formula_inner(cls, num):
-        return (-1)**num * ((cls.rad)**(2*num)/Taylor().fatorial(num=2*num))
+        print("num=", num)
+        mid = ((-1)**num) * ((cls.rad**(2*num))/Taylor().fatorial(num=2*num))
+        print(mid)
+        return mid
 
     @classmethod
     def fatorial(cls, num, acc=1):
         if num > 1:
             return  Taylor().fatorial(num=num-1, acc=acc*num)
         else:
+            print("acc=", acc)
             return acc
 
     @classmethod
@@ -24,4 +28,4 @@ class Taylor:
 
 
 if __name__ == '__main__':
-    print(Taylor(5).rad)
+    print(Taylor(int(input())).formula_apply())
