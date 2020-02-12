@@ -71,4 +71,3 @@ if __name__ == '__main__':
     for x in range(num):
         silv.inst_card()
     judge.all_in(dan.cards, silv.cards)
-
