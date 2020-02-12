@@ -14,7 +14,7 @@ class Megabobagem:
             if occur:
                 setattr(self, "{}".format(chr(x)), occur)
 
-    def check_anagram(self) -> bool:
+    def check_anagram(self):
         self.counter()
         count_imp = 0
         for x in range(65, 91):
