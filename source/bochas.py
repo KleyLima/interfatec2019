@@ -25,19 +25,19 @@ class Bochas:
 
     def turner(self):
         for _ in range(self.turns):
-            print("Turner")
             self.inst_ball()
             self.calc_dist()
 
         while self.wth_points == self.red_points:
             self.inst_ball()
             self.calc_dist()
+        
+        self.printer()
 
     def inst_ball(self):
         """Seta o valor das posições das bolas no jogo, tanto o bolim como a dos jogadores"""
         self.bolim = Bochas.spliter()
         for color in self.colors:
-            print(color)
             self.coord_balls(color=color)
 
     def coord_balls(self, color):
@@ -86,10 +86,13 @@ class Bochas:
 
         self.draw = False
 
+    def printer(self):
+        print("PONTOS DAS BOCHAS BRANCAS =", self.wth_points)
+        print("PONTOS DAS BOCHAS VERMELHAS =", self.red_points)
+        print("VENCEDOR: BOCHAS {}".format("VERMELHAS" if self.red_points > self.wth_points else "BRANCAS"))
 
 if __name__ == '__main__':
     balls, turns = [int(x) for x in input().split()]
     bo = Bochas(balls=balls, turns=turns)
     bo.turner()
-    print(bo.wth_points)
-    print(bo.red_points)
+
